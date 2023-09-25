@@ -16,6 +16,7 @@ function get_configuration_settings {
   then
     echo "AWS Access Key Id was not found. Using configuration from previous step."
   else
+    echo $INPUT_AWS_ACCESS_KEY_ID
     aws configure set aws_access_key_id "$INPUT_AWS_ACCESS_KEY_ID"
   fi
 
@@ -23,6 +24,7 @@ function get_configuration_settings {
   then
     echo "AWS Secret Access Key was not found. Using configuration from previous step."
   else
+    echo $INPUT_AWS_SECRET_ACCESS_KEY
     aws configure set aws_secret_access_key "$INPUT_AWS_SECRET_ACCESS_KEY"
   fi
 
